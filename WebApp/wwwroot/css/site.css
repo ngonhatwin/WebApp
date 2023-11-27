@@ -24,30 +24,35 @@ footer {
 }
 
     /* Giảm kích thước cho phần nội dung trong footer */
-    footer .container {
-        max-width: 1000px; /* Thiết lập chiều rộng tối đa */
-        max-height: 200px;
-    }
-    .item{
-        height : 30px;
-    }
+footer .container {
+    max-width: 1000px; /* Thiết lập chiều rộng tối đa */
+    max-height: 200px;
+}
+.item
+{
+    height : 30px;
+}
     /* Giảm kích thước cho các cột trong footer */
-    footer .col-md-4 {
-        width: 33.333%; /* Chia chiều rộng thành 1/3 để làm cho nó nhỏ hơn */
-    }
+footer .col-md-4 
+{
+    width: 33.333%; /* Chia chiều rộng thành 1/3 để làm cho nó nhỏ hơn */
+}
 
     /* Hiển thị nội dung trong một hàng */
-    footer .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
 
         /* Chỉnh sửa khoảng cách giữa các hàng */
-        footer .row:not(:last-child) {
-            margin-bottom: 15px;
-        }
+footer .row:not(:last-child) 
+{
+    margin-bottom: 15px;
+}
 
     /* Tăng cỡ chữ cho tiêu đề trong các cột */
-    footer h5 {
-        font-size: 18px;
-    }
+footer h5 
+{
+    font-size: 18px;
+}

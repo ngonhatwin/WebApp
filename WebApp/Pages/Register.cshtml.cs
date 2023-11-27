@@ -8,17 +8,24 @@ using System.Threading.Tasks;
 
 namespace WebApp.Pages
 {
+    
     public class RegisterModel : PageModel
     {
         public class User
         {
+            
+
             public string Ho { get; set; }
             public string Ten { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
+            public string email { get; set; }
+            public string password { get; set; }
+
+            
         }
 
-        public User user { get; set; }
+        [BindProperty]
+        public User user { set ; get; }
+
 
         public void OnGet()
         {
@@ -27,17 +34,20 @@ namespace WebApp.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+  
             // Xử lý yêu cầu HTTP POST
             using (var httpClient = new HttpClient())
             {
-                var apiEndpoint = "https://localhost:7253/api/Product"; // Thay thế URL API của bạn
+                var apiEndpoint = "https://localhost:7253/api/Account";
 
-                var jsonContent = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
+                User abc = user;
+                var jsonContent = new StringContent(JsonSerializer.Serialize(user) ,Encoding.UTF8, "application/json");
 
                 var response = await httpClient.PostAsync(apiEndpoint, jsonContent);
 
                 if (response.IsSuccessStatusCode)
                 {
+                    System.Diagnostics.Debug.WriteLine($"đăng kí thành công");
                     // Đăng ký thành công, thực hiện các tác vụ khác nếu cần
                     return RedirectToPage("/Index");
                 }

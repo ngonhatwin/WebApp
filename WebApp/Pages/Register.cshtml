@@ -4,21 +4,23 @@
     ViewData["Title"] = "Đăng kí";
 }
 <div class="text-center">
-    <form class="w-100" style="max-width: 400px; margin: auto;">
+    <form class="w-100" style="max-width: 400px; margin: auto;" method="Post">
         <div class="mb-3">
             <label for="email" class="form-label">Tạo tài khoản</label>
-            <input type="text" class="form-control" id="Ho" placeholder="Họ">
+            <input type="text" class="form-control" id="Ho" asp-for="user.Ho" placeholder="Họ">
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" id="Ten" placeholder="Tên">
+            <input type="text" class="form-control" id="Ten" asp-for="user.Ten" placeholder="Tên">
         </div>
         <div class="mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" asp-for="user.email" placeholder="Email">
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+            <input type="password" class="form-control" id="password" asp-for="user.password" placeholder="Mật khẩu">
         </div>
-        <button type="submit" class="btn btn-primary">Đăng kí</button>
+        <button asp-page-handler="OnPostAsync" class="btn btn-primary">Đăng kí</button>
         <a href="#" class="btn btn-link">Quay lại trang chủ</a>
     </form>
 </div>
+
+
